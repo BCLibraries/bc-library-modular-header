@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Parameterized test file</title>
+        <meta charset="utf-8"/>
+
+        <style>
+            body {
+                padding: 0;
+                margin: 0;
+                height: auto;
+            }
+        </style>
+    </head>
+    <body>
+        <link rel="stylesheet" href="../css/lib-header.css"/>
+        <div id="bclib-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 col-sm-12 col-xs-6 col-xxs">
+                        <a href="https://library.bc.edu" title="Go to Boston College Libraries" class="bclib-header-logo">
+                            <img src="https://library.bc.edu/theme/img/title_295x30_transparent_whitetext.png" id="fakebctitle" alt="Boston College Library Logo">
+                            <p>Boston College Libraries</p>
+                        </a>
+                    </div>
+                    <div class="col-md-8 col-sm-12 col-xs-6 col-xxs header-right">
+                        <div class="col-md-7 col-sm-7 col-xs-7 col-xxs link-wrapper">
+                            <ul class="bclib-header-links">
+                                <li><a href="https://bc.edu">BC Home</a></li>
+                                <li><a href="https://www.bc.edu/bc-web/about/mission.html">Mission</a></li>
+                                <li><a href="https://libguides.bc.edu/feedback"><span class="fa fa-commenting-o" aria-hidden="true"></span> Feedback</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-5 col-sm-5 col-xs-5 col-xxs input-wrapper">
+                            <div class="pull-right">
+                                <form action="https://www.bc.edu/bc-web/search.html">
+                                    <div class="input-group" id="bclib-header-form">
+                                        <label for="bclib-header-search" class="accessibility-text">Search the Library</label>
+                                        <input type="hidden" ie="UTF-8" />
+                                        <input type="text" id="bclib-header-search" class="form-control" name="q" placeholder="Search bc.edu">
+                                        <span class="input-group-btn"><button class="btn btn-default"><i class="fa fa-search" aria-hidden="true"></i><span class="accessibility-text">Submit Search</span></button></span>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script type="text/javascript">
+            // https://stackoverflow.com/questions/901115/how-can-i-get-query-string-values-in-javascript
+            var urlParams;
+            (window.onpopstate = function () {
+                var match,
+                    pl     = /\+/g,  // Regex for replacing addition symbol with a space
+                    search = /([^&=]+)=?([^&]*)/g,
+                    decode = function (s) { return decodeURIComponent(s.replace(pl, " ")); },
+                    query  = window.location.search.substring(1);
+
+                urlParams = {};
+                while (match = search.exec(query))
+                   urlParams[decode(match[1])] = decode(match[2]);
+            })();
+
+            $(document).ready(function(event){
+                console.log("");
+
+                add_opensans = '<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">';
+                add_fontawesome = '<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">';
+                add_bootstrap3 = '<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">';
+                add_bootstrap4 = '<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">'
+                add_custom_bootstrap = '<link rel="stylesheet" href="../css/lib-header-custom-bootstrap3.css"/>';
+
+                // check if there are any parameters in the url
+                // if not, set page to a known state by adding default stylesheets
+                // else, loop through expected parameters and add stylesheets as necessary
+                if ($.isEmptyObject(urlParams)){
+                    console.log("there are no parameters. setting to default mode");
+                    $(".header-right").addClass("hide-search");
+                    $("head").append(add_opensans);
+                    $("head").append(add_fontawesome);
+                    $("head").append(add_bootstrap3);
+                    $("head").append(add_custom_bootstrap);
+                } else {
+                    console.log("updating params...");
+
+                    // check if search box is displayed or not
+                    if (urlParams["showsearch"]) {
+                        if (urlParams["showsearch"] === "true") {
+                            console.log("show search box");
+                        } else {
+                            console.log("hide search box");
+                            $(".header-right").addClass("hide-search");
+                        }
+                    } else {
+                        console.log("could not find parameter 'showsearch' - defaulting to hiding search box");
+                        $(".header-right").addClass("hide-search");
+                    }
+
+                    // check if OpenSans font is used
+                    if (urlParams["opensans"]) {
+                        if (urlParams["opensans"] === "true") {
+                            console.log("include OpenSans font");
+                            $("head").append(add_opensans);
+                        } else {
+                            console.log("do not include OpenSans font");
+                        }
+                    } else {
+                        console.log("could not find parameter 'opensans' - defaulting to NOT including OpenSans font");
+                    }
+
+                    // check if Font Awesome is used
+                    if (urlParams["fa"]) {
+                        if (urlParams["fa"] === "true") {
+                            console.log("include Font Awesome");
+                            $("head").append(add_fontawesome);
+                        } else {
+                            console.log("do not include Font Awesome");
+                        }
+                    } else {
+                        console.log("could not find parameter 'fa' - defaulting to NOT including Font Awesome");
+                    }
+
+                    // check if a version of bootstrap already exists within the page
+                    if (urlParams["bs"]) {
+                        if (urlParams["bs"] === "3") {
+                            console.log("using embedded Bootstrap version " + urlParams["bs"]);
+                            $("head").append(add_bootstrap3);
+                        } else if (urlParams["bs"] === "4") {
+                            console.log("using embedded Bootstrap version " + urlParams["bs"]);
+                            $("head").append(add_bootstrap4);
+                        } else if (urlParams["bs"] === "0") {
+                            console.log("do not use Bootstrap");
+                        }
+                    } else {
+                        console.log("could not find parameter 'bs' - defaulting to use Bootstrap version 3");
+                        $("head").append(add_bootstrap3);
+                    }
+
+                    // check if custom Bootstrap v3 stylesheet is used
+                    // this stylesheet is only necessary if Bootstrap 3 isn't already loaded...
+                    if (urlParams["bscustom"]) {
+                        if (urlParams["bscustom"] === "true") {
+                            console.log("include custom Bootstrap v3 stylesheet");
+                            $("head").append(add_custom_bootstrap);
+                        } else {
+                            console.log("do not include custom Bootstrap v3 stylesheet");
+                        }
+                    } else {
+                        console.log("could not find parameter 'bscustom' - defaulting to NOT including custom Bootstrap v3 stylesheet");
+                    }
+                }
+            });
+        </script>
+    </body>
+</html>
