@@ -24,7 +24,7 @@
                             <p>Boston College Libraries</p>
                         </a>
                     </div>
-                    <div class="col-md-8 col-sm-12 col-xs-6 col-xxs header-right">
+                    <div class="col-md-8 col-sm-12 col-xs-6 col-xxs header-right hide-search">
                         <div class="col-md-7 col-sm-7 col-xs-7 col-xxs link-wrapper">
                             <ul class="bclib-header-links">
                                 <li><a href="https://bc.edu">BC Home</a></li>
@@ -91,13 +91,13 @@
                     if (urlParams["showsearch"]) {
                         if (urlParams["showsearch"] === "true") {
                             console.log("show search box");
+                            $(".header-right").removeClass("hide-search");
                         } else {
                             console.log("hide search box");
                             $(".header-right").addClass("hide-search");
                         }
                     } else {
                         console.log("could not find parameter 'showsearch' - defaulting to hiding search box");
-                        $(".header-right").addClass("hide-search");
                     }
 
                     // check if OpenSans font is used
