@@ -31,7 +31,7 @@ Your application `<head>` should look like the following.
 | :---: |
 
 
-## If Bootstrap v3 in already included with your application
+## If Bootstrap v3 is already included with your application
 
 Great! You can leave out the [custom "slim" stylesheet](css/lib-header-custom-bootstrap3.css) link from your `<head>` section since it provides the same styles as Bootstrap. Of course, nothing bad will happen if you leave this stylesheet included.
 
