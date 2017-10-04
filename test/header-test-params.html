@@ -16,7 +16,7 @@
     <body>
         <link rel="stylesheet" href="../css/lib-header.css"/>
         <div id="bclib-header" class="hide-search">
-            <div class="container">
+            <div id="container-id" class="container">
                 <div class="row">
                     <div class="col-md-4 col-sm-12 col-xs-6 col-xxs">
                         <a href="https://library.bc.edu" title="Go to Boston College Libraries" class="bclib-header-logo">
@@ -98,6 +98,18 @@
                         }
                     } else {
                         console.log("could not find parameter 'showsearch' - defaulting to hiding search box");
+                    }
+
+                    // check for container width class
+                    if (urlParams["cw"]) {
+                        if (urlParams["cw"] === "true") {
+                            console.log("use container-fluid class");
+                            $("#container-id").removeClass("container").addClass("container-fluid");
+                        } else {
+                            console.log("do not use container-fluid class");
+                        }
+                    } else {
+                        console.log("could not find parameter 'cw' - defaulting to normal container class");
                     }
 
                     // check if OpenSans font is used
