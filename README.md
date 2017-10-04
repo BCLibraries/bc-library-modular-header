@@ -30,6 +30,42 @@ Your application `<head>` should look like the following.
 |     :warning: Additional stylesheets can add additional load time to your application     |
 | :---: |
 
+## Changing header features
+
+There are a few easy and quick ways to change the behavior of the header.
+
+### Change BC search form visibility
+
+By default, the BC search form is hidden from view. To make the search form visible simply remove the class name `hide-search` from the first line of the module html.
+
+From
+```
+<div id="bclib-header" class="hide-search">
+```
+
+To
+
+```
+<div id="bclib-header" class="">
+```
+
+### Force header content to 100% page/app width
+
+This header is based on the [Bootstrap v3 grid system](https://getbootstrap.com/docs/3.3/css/#overview-container), which uses responsive fixed-width containers. Container width can also change depending on the viewing device, but follows well established media query values for common device breakpoints. 
+
+To force the header to always fill 100% of the page/app width simply change the second line of the module html to use `container-fluid`.
+
+From 
+
+```
+<div class="container">
+```
+
+To
+
+```
+<div class="container-fluid">
+```
 
 ## If Bootstrap v3 is already included with your application
 
