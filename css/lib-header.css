@@ -52,6 +52,7 @@
 #bclib-header ul.bclib-header-links li {
     display: inline;
     margin: 0 10px;
+    line-height: 1.1667; /* 14/12 px */
 }
 #bclib-header ul.bclib-header-links li:first-child {
     margin-left: 0px;
