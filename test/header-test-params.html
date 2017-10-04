@@ -15,7 +15,7 @@
     </head>
     <body>
         <link rel="stylesheet" href="../css/lib-header.css"/>
-        <div id="bclib-header">
+        <div id="bclib-header" class="hide-search">
             <div class="container">
                 <div class="row">
                     <div class="col-md-4 col-sm-12 col-xs-6 col-xxs">
@@ -24,7 +24,7 @@
                             <p>Boston College Libraries</p>
                         </a>
                     </div>
-                    <div class="col-md-8 col-sm-12 col-xs-6 col-xxs header-right hide-search">
+                    <div class="col-md-8 col-sm-12 col-xs-6 col-xxs header-right">
                         <div class="col-md-7 col-sm-7 col-xs-7 col-xxs link-wrapper">
                             <ul class="bclib-header-links">
                                 <li><a href="https://bc.edu">BC Home</a></li>
@@ -79,7 +79,7 @@
                 // else, loop through expected parameters and add stylesheets as necessary
                 if ($.isEmptyObject(urlParams)){
                     console.log("there are no parameters. setting to default mode");
-                    $(".header-right").addClass("hide-search");
+                    $("#bclib-header").addClass("hide-search");
                     $("head").append(add_opensans);
                     $("head").append(add_fontawesome);
                     $("head").append(add_bootstrap3);
@@ -91,10 +91,10 @@
                     if (urlParams["showsearch"]) {
                         if (urlParams["showsearch"] === "true") {
                             console.log("show search box");
-                            $(".header-right").removeClass("hide-search");
+                            $("#bclib-header").removeClass("hide-search");
                         } else {
                             console.log("hide search box");
-                            $(".header-right").addClass("hide-search");
+                            $("#bclib-header").addClass("hide-search");
                         }
                     } else {
                         console.log("could not find parameter 'showsearch' - defaulting to hiding search box");

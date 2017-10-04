@@ -105,10 +105,12 @@
 }
 
 /* option to hide bc search box */
-#bclib-header .hide-search .input-wrapper {
+#bclib-header .hide-search .input-wrapper,
+#bclib-header.hide-search .input-wrapper {
     display: none;
 }
-#bclib-header .hide-search .link-wrapper {
+#bclib-header .hide-search .link-wrapper,
+#bclib-header.hide-search .link-wrapper {
     width: 100%;
 }
 
