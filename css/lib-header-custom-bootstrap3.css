@@ -21,6 +21,10 @@
     box-sizing: border-box;
 }
 
+#bclib-header .container-fluid {
+    width: 100%;
+}
+
 /* 111 */
 #bclib-header button, 
 #bclib-header input {
