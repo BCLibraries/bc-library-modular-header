@@ -9,8 +9,8 @@ A [custom "slim" stylesheet](css/lib-header-custom-bootstrap3.css) is provided f
 The easiest recipe is to add the following link tags to the `<head>` section of your web application.
 
 ```
-<link rel="stylesheet" href="/path/to/css/lib-header-custom-bootstrap3.css"/>
-<link rel="stylesheet" href="/path/to/css/lib-header.css"/>
+<link rel="stylesheet" href="https://library.bc.edu/theme/modular/header/css/lib-header-custom-bootstrap3.css"/>
+<link rel="stylesheet" href="https://library.bc.edu/theme/modular/header/css/lib-header.css"/>
 ```
 
 Then add the contents of [lib-header.html](lib-header.html) into the top of the `<body>` section of your application. The exact placement of the header html is dependant on the specific application but can generally be the very first section within the `<body>` section.
@@ -24,8 +24,8 @@ Your application `<head>` should look like the following.
 ```
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="/path/to/css/lib-header-custom-bootstrap3.css"/>
-<link rel="stylesheet" href="/path/to/css/lib-header.css"/>
+<link rel="stylesheet" href="https://library.bc.edu/theme/modular/header/css/lib-header-custom-bootstrap3.css"/>
+<link rel="stylesheet" href="https://library.bc.edu/theme/modular/header/css/lib-header.css"/>
 ```
 |     :warning: Additional stylesheets can add additional load time to your application     |
 | :---: |
