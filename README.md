@@ -10,13 +10,13 @@ The easiest recipe is to add the following link tags to the `<head>` section of 
 
 ### If your application currently uses Bootstrap v3 or v4:
 ```
-<link rel="stylesheet" href="https://library.bc.edu/theme/modular/header/css/lib-header.css"/>
+<link rel="stylesheet" href="https://library.bc.edu/theme/modular/header/css/bclibrary-custom-header.css"/>
 ```
 
 ### Otherwise, include the custom slim stylesheet:
 ```
-<link rel="stylesheet" href="https://library.bc.edu/theme/modular/header/css/lib-header-custom-bootstrap3.css"/>
-<link rel="stylesheet" href="https://library.bc.edu/theme/modular/header/css/lib-header.css"/>
+<link rel="stylesheet" href="https://library.bc.edu/theme/modular/header/css/bclibrary-custom-slim-bootstrap3.css"/>
+<link rel="stylesheet" href="https://library.bc.edu/theme/modular/header/css/bclibrary-custom-header.css"/>
 ```
 
 Then copy/paste the contents of [lib-header.html](lib-header.html) into the top of the `<body>` section of your application. The exact placement of the header html is dependant on the specific application but can generally be the very first section within the `<body>` section.
@@ -31,8 +31,8 @@ Your application `<head>` might look like the following:
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="https://library.bc.edu/theme/modular/header/css/lib-header-custom-bootstrap3.css"/>
-<link rel="stylesheet" href="https://library.bc.edu/theme/modular/header/css/lib-header.css"/>
+<link rel="stylesheet" href="https://library.bc.edu/theme/modular/header/css/bclibrary-custom-slim-bootstrap3.css"/>
+<link rel="stylesheet" href="https://library.bc.edu/theme/modular/header/css/bclibrary-custom-header.css"/>
 ```
 |     :warning: Additional stylesheets can add additional load time to your application     |
 | :---: |
