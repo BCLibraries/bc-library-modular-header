@@ -20,14 +20,6 @@
     box-sizing: border-box;
 }
 
-/* 248 */
-#bclib-header label {
-    display: inline-block;
-    max-width: 100%;
-    margin-bottom: 5px;
-    font-weight: 700;
-}
-
 /* 1584 */
 #bclib-header .container {
     padding-right: 15px;
@@ -205,4 +197,12 @@
     #bclib-header .col-md-1 {
         width: 8.33333333%;
     }*/
+}
+
+/* 6493 */
+#bclib-header .container:after,
+#bclib-header .container-fluid:after {
+    display: table;
+    content: " ";
+    clear: both;
 }
