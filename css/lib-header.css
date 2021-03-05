@@ -68,11 +68,6 @@
     overflow: hidden;
 }
 
-
-/*                                    */
-/* custom header module media queries */
-/*                                    */
-
 @media (max-width: 480px) {
     #bclib-header .col-xxs {
         display: block !important;
